@@ -595,7 +595,7 @@ export default function Portfolio() {
                       Sultan Mia
                     </span>
                   </motion.h1>
-                  <motion.p variants={fadeInUp} className="text-2xl md:text-3xl font-semibold text-muted-foreground">MERN Stack Developer</motion.p>
+                  <motion.p variants={fadeInUp} className="text-2xl md:text-3xl font-semibold text-muted-foreground">Frontend Developer</motion.p>
                   <motion.p variants={fadeInUp} className="text-lg text-muted-foreground max-w-xl mx-auto lg:mx-0 leading-relaxed text-pretty">
                     Building scalable full-stack web applications with modern technologies. Passionate about creating
                     elegant solutions to complex problems.
@@ -703,7 +703,7 @@ export default function Portfolio() {
                         <span className="text-chart-5">"Sultan Mia"</span>,
                         <br />
                         <span className="text-muted-foreground ml-4">role: </span>
-                        <span className="text-chart-5">"MERN Stack Developer"</span>,
+                        <span className="text-chart-5">"Frontend Developer"</span>,
                         <br />
                         <span className="text-muted-foreground ml-4">status: </span>
                         <span className="text-green-500">"available"</span>
