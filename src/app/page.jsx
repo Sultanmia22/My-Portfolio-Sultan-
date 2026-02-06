@@ -297,17 +297,6 @@ export default function Portfolio() {
 
   const education = [
   {
-    degree: "Secondary School Certificate (SSC)",
-    institution: "Khunua Charpara Moulovi Nagar High School",
-    period: "2019 – 2021",
-    status: "Completed",
-    description: "Completed SSC in Science stream, with a focus on core science subjects and Computer Science.",
-    achievements: [
-      "GPA: 4.67 / 5.0",
-    ],
-    icon: Award,
-  },
-  {
     degree: "Diploma in Computer Science and Technology",
     institution: "Sherpur Govt. Polytechnic Institute",
     period: "2020 – 2024",
