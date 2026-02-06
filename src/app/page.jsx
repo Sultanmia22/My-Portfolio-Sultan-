@@ -37,6 +37,8 @@ import {
   Facebook,
   Laptop,
 } from "lucide-react"
+import Contact from "@/components/ContactSection"
+import ContactSection from "@/components/ContactSection"
 
 // Animation variants
 const staggerContainer = {
@@ -83,7 +85,7 @@ export default function Portfolio() {
   const [darkMode, setDarkMode] = useState(true)
   const [activeSection, setActiveSection] = useState("home")
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" })
+  // const [formData, setFormData] = useState({ name: "", email: "", message: "" })
   const [formStatus, setFormStatus] = useState("")
   const [selectedProject, setSelectedProject] = useState(null)
   const [activeProject, setActiveProject] = useState(null)
@@ -142,16 +144,16 @@ export default function Portfolio() {
     }
   }
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    setFormStatus("sending")
+  // const handleSubmit = (e) => {
+  //   e.preventDefault()
+  //   setFormStatus("sending")
 
-    setTimeout(() => {
-      setFormStatus("success")
-      setFormData({ name: "", email: "", message: "" })
-      setTimeout(() => setFormStatus(""), 3000)
-    }, 1000)
-  }
+  //   setTimeout(() => {
+  //     setFormStatus("success")
+  //     setFormData({ name: "", email: "", message: "" })
+  //     setTimeout(() => setFormStatus(""), 3000)
+  //   }, 1000)
+  // }
 
   const skills = {
     frontend: [
@@ -1307,192 +1309,7 @@ export default function Portfolio() {
             </div>
           </section>
 
-          <section id="contact" className="py-24 px-4 bg-muted/30 relative overflow-hidden">
-            <div className="absolute inset-0 grid-background opacity-30"></div>
-
-            <div className="max-w-5xl mx-auto relative z-10">
-              <AnimatedSection className="text-center mb-16">
-                <h2 className="text-sm font-bold text-primary mb-4 tracking-wider uppercase">Get In Touch</h2>
-                <h3 className="text-4xl md:text-5xl font-bold mb-6">
-                  Let's <span className="text-primary">Connect</span>
-                </h3>
-                <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                  Have a project in mind or just want to chat? Feel free to reach out!
-                </p>
-              </AnimatedSection>
-
-              <div className="grid md:grid-cols-2 gap-8">
-                <AnimatedSection delay={0.1} className="space-y-6">
-                  <motion.div
-                    initial={{ opacity: 0, x: -30 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    whileHover={{ x: 5 }}
-                  >
-                    <Card className="p-6 hover:border-primary/30 transition-all">
-                      <div className="flex items-center gap-4">
-                        <div className="p-3 rounded-xl bg-primary/10">
-                          <Mail className="w-6 h-6 text-primary" />
-                        </div>
-                        <div>
-                          <div className="text-sm text-muted-foreground">Email</div>
-                          <a
-                            href="mailto:sultanmia5732@gmail.com"
-                            className="font-semibold hover:text-primary transition-colors"
-                          >
-                            sultanmia5732@gmail.com
-                          </a>
-                        </div>
-                      </div>
-                    </Card>
-                  </motion.div>
-
-                  <motion.div
-                    initial={{ opacity: 0, x: -30 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.1 }}
-                    whileHover={{ x: 5 }}
-                  >
-                    <Card className="p-6 hover:border-primary/30 transition-all">
-                      <div className="flex items-center gap-4">
-                        <div className="p-3 rounded-xl bg-chart-1/10">
-                          <Phone className="w-6 h-6 text-chart-1" />
-                        </div>
-                        <div>
-                          <div className="text-sm text-muted-foreground">Phone</div>
-                          <a href="tel:+8801746931945" className="font-semibold hover:text-primary transition-colors">
-                            +8801746931945
-                          </a>
-                        </div>
-                      </div>
-                    </Card>
-                  </motion.div>
-
-                  <motion.div
-                    initial={{ opacity: 0, x: -30 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.2 }}
-                    whileHover={{ x: 5 }}
-                  >
-                    <Card className="p-6 hover:border-primary/30 transition-all">
-                      <div className="flex items-center gap-4">
-                        <div className="p-3 rounded-xl bg-chart-3/10">
-                          <MessageCircle className="w-6 h-6 text-chart-3" />
-                        </div>
-                        <div>
-                          <div className="text-sm text-muted-foreground">WhatsApp</div>
-                          <a
-                            href="https://wa.me/01746931945"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="font-semibold hover:text-primary transition-colors"
-                          >
-                            +8801746931945
-                          </a>
-                        </div>
-                      </div>
-                    </Card>
-                  </motion.div>
-
-                  <motion.div 
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.3 }}
-                    className="flex gap-3 pt-4"
-                  >
-                    <motion.a
-                      href="https://github.com/Sultanmia22"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ scale: 1.02, y: -2 }}
-                      whileTap={{ scale: 0.98 }}
-                      className="flex-1 p-4 rounded-xl border border-border hover:border-primary hover:bg-primary/5 transition-all flex items-center justify-center gap-2 group"
-                    >
-                      <Github className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                      <span className="font-medium">GitHub</span>
-                    </motion.a>
-                    <motion.a
-                      href="https://www.linkedin.com/in/devmdsultanmia/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ scale: 1.02, y: -2 }}
-                      whileTap={{ scale: 0.98 }}
-                      className="flex-1 p-4 rounded-xl border border-border hover:border-primary hover:bg-primary/5 transition-all flex items-center justify-center gap-2 group"
-                    >
-                      <Linkedin className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                      <span className="font-medium">LinkedIn</span>
-                    </motion.a>
-                  </motion.div>
-                </AnimatedSection>
-
-                <AnimatedSection delay={0.2}>
-                  <Card className="p-8">
-                    <form onSubmit={handleSubmit} className="space-y-6">
-                      <div>
-                        <label htmlFor="name" className="block text-sm font-medium mb-2">
-                          Name
-                        </label>
-                        <Input
-                          id="name"
-                          type="text"
-                          placeholder="Your name"
-                          value={formData.name}
-                          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                          required
-                          className="w-full"
-                        />
-                      </div>
-
-                      <div>
-                        <label htmlFor="email" className="block text-sm font-medium mb-2">
-                          Email
-                        </label>
-                        <Input
-                          id="email"
-                          type="email"
-                          placeholder="your@email.com"
-                          value={formData.email}
-                          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                          required
-                          className="w-full"
-                        />
-                      </div>
-
-                      <div>
-                        <label htmlFor="message" className="block text-sm font-medium mb-2">
-                          Message
-                        </label>
-                        <textarea
-                          id="message"
-                          placeholder="Your message..."
-                          value={formData.message}
-                          onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                          required
-                          className="w-full min-h-[150px] px-4 py-3 rounded-lg border border-input bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent resize-none"
-                        />
-                      </div>
-
-                      <Button type="submit" size="lg" className="w-full group" disabled={formStatus === "sending"}>
-                        {formStatus === "sending" ? (
-                          "Sending..."
-                        ) : formStatus === "success" ? (
-                          "Message Sent!"
-                        ) : (
-                          <>
-                            Send Message
-                            <Send className="ml-2 w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                          </>
-                        )}
-                      </Button>
-                    </form>
-                  </Card>
-                </AnimatedSection>
-              </div>
-            </div>
-          </section>
+          <ContactSection/>
 
           {/* Footer */}
           <motion.footer 
